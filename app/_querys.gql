@@ -1,0 +1,50 @@
+# Fragments
+fragment imageData on UploadFile {
+  alternativeText
+  url
+}
+
+fragment logo on LandingPage {
+  logo {
+    ...imageData
+  }
+}
+
+fragment header on LandingPage {
+  header {
+    title
+    description
+    button {
+      label
+      url
+    }
+    image {
+      ...imageData
+    }
+  }
+}
+
+# Querys
+query GET_LANDING_PAGE {
+  landingPage {
+    ...logo
+    ...header
+  }
+}
+
+query GET_AUTHORS {
+  authors {
+    name
+    role
+    description
+  }
+}
+
+query GET_AUTHOR($id: ID!) {
+  author(id: $id) {
+    id
+    name
+    role
+    description
+  }
+}

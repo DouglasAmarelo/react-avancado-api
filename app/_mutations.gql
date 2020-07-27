@@ -1,0 +1,10 @@
+# Mutations
+mutation UPDATE_AUTHOR($id: ID!, $data: editAuthorInput) {
+  updateAuthor(input: { where: { id: $id }, data: $data }) {
+    author {
+      id
+      name
+      role
+    }
+  }
+}
