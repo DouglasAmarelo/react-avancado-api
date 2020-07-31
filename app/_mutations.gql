@@ -8,3 +8,23 @@ mutation UPDATE_AUTHOR($id: ID!, $data: editAuthorInput) {
     }
   }
 }
+
+mutation CREATE_AUTHOR($data: AuthorInput) {
+  createAuthor(input: { data: $data }) {
+    author {
+      id
+      name
+      role
+    }
+  }
+}
+
+mutation DELETE_AUTHOR($id: ID!) {
+  deleteAuthor(input: { where: { id: $id } }) {
+    author {
+      id
+      name
+      role
+    }
+  }
+}
