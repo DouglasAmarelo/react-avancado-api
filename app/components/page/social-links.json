@@ -9,14 +9,14 @@
     "title": {
       "type": "enumeration",
       "enum": [
-        "GitHub",
         "Twitter",
-        "Dribble",
+        "GitHub",
+        "Dribbble",
         "LinkedIn",
         "Facebook"
       ],
       "default": "Twitter",
-      "required": true
+      "required": false
     },
     "url": {
       "type": "string",
